@@ -1,10 +1,5 @@
 <template>
   <q-page padding>
-    <!-- <img alt="Quasar logo" src="~assets/quasar-logo-full.svg"> -->
-    <div class="row">
-      <q-btn glossy @click="noMessage()">Show</q-btn>
-    </div>
-
     <div class="row q-col-gutter-xs mt-2">
       <div class="col-xl-6 col-lg-3 col-md-3 col-sm-6 col-xs-12 col-3" v-for="(n,index) in results" :key="`xs-${index}`">
         <div class="my-content">
@@ -106,21 +101,9 @@ export default {
     }
   },
   methods: {
-    noMessage () {
-      show({
-        spinner: QSpinnerGears,
-        spinnerColor: 'black',
-        // spinnerSize: 220,
-        message: 'Some important process is in progress. Hang on...',
-        messageColor: 'black',
-        backgroundColor: 'yellow',
-      })
-    }
+
   },
   created() {
-
-    console.log(localStorage.getItem('user'))
-
   }
 }
 </script>

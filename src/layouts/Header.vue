@@ -1,5 +1,5 @@
 <template>
-     <q-header elevated >
+     <q-header elevated v-if="!$route.meta.allowAnonymous">
       <q-toolbar class="bg-teal-5 glossy">
         <q-btn
           flat

@@ -1,6 +1,6 @@
 <template>
     <q-drawer
-      v-model="leftDrawerOpen"
+      v-model="drawerState"
       show-if-above
       bordered
       content-class="inset-shadow"
@@ -23,16 +23,18 @@
 <script>
 export default {
     props: {
-        leftDrawerOpen: {
-            type: Boolean,
-            required: true
-        }
+
     },
     computed: {
-        status () {
-            return this.isOpen
+      drawerState: {
+        get () {
+          return this.$store.state.showcase.drawerState
+        },
+        set (val) {
+          this.$store.commit('showcase/updateDrawerState', val)
         }
-    },
+      }
+  },
     data () {
       return {
         options: [

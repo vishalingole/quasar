@@ -14,6 +14,8 @@ export default {
     login: 'लॉग इन करें',
     Language: 'भाषा',
     language: 'भाषा',
-    'Daniel jack': 'डैनियल जैक'
+    'Daniel jack': 'डैनियल जैक',
+    'Ashish Sarode': 'आशीष सरोदे',
+    'Rohit Khatri': 'रोहित खत्री'
 
   }

@@ -1,7 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <Header @update-drawer="drawerToogle"/>
-    <NavigationDrawer :leftDrawerOpen="leftDrawerOpen" v-if="!$route.meta.allowAnonymous"/>
+    <Header/>
+    <NavigationDrawer v-if="!$route.meta.allowAnonymous"/>
 
     <!-- <q-drawer
       v-model="leftDrawerOpen"
@@ -91,9 +91,7 @@ export default {
     }
   },
   methods: {
-    drawerToogle () {
-      this.leftDrawerOpen = !this.leftDrawerOpen
-    }
+
   }
 }
 </script>

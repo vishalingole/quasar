@@ -70,7 +70,7 @@ export default {
     name: 'Header',
     methods: {
         toggleDrawer () {
-            this.$emit('update-drawer')
+            this.$store.commit('showcase/updateDrawerState', !this.$store.state.showcase.drawerState)
         }
     },
     data () {

@@ -16,5 +16,7 @@ export default {
     language: 'भाषा',
     'David Back':'डेविड बैक',
     'Daniel jack': 'डॅनियल जॅक',
-    'Single line item': 'सिंगल लाइन आइटम'
+    'Single line item': 'सिंगल लाइन आइटम',
+    'Ashish Sarode': 'आशिष सरोदे',
+    'Rohit Khatri': 'रोहित खत्री'
   }

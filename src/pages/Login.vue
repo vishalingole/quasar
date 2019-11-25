@@ -12,7 +12,7 @@
             </q-form>
           </q-card-section>
           <q-card-actions class="q-px-md">
-            <q-btn unelevated color="light-green-7" size="md" class="full-width" :label="$t('Login')" outline glossy />
+            <q-btn unelevated color="light-green-7" size="md" class="full-width" :label="$t('Login')" @click="login" outline glossy />
           </q-card-actions>
           <q-card-section class="text-center q-pa-none">
             <p class="text-grey-6">Not reigistered? Created an Account</p>
@@ -24,12 +24,28 @@
 </template>
 
 <script>
+
+import { LoaderMixin } from '../mixins/LoaderMixin'
+
 export default {
   name: 'Login',
+  mixins: [LoaderMixin],
   data () {
     return {
       email: '',
       password: ''
+    }
+  },
+  methods: {
+    login() {
+      this.showLoader()
+      this.$store.dispatch("login/login", {
+        email: this.email,
+        password: this.password
+      }).then(() => {
+        this.hideLoader()
+        this.$router.push("/")
+      });
     }
   }
 }

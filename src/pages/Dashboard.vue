@@ -1,6 +1,7 @@
 <template>
 	<q-page padding>
-        <div class="" style="border: 1px solid #ccc">
+		<div class="q-pa-md">
+            <div class="q-mb-md" style="border: 1px solid #ccc; width: 100%">
             <div class="row q-col-gutter-xs">
                 <div class="col-md-3 col-sm-6 col-xs-6">
                     <div class="my-content">
@@ -93,7 +94,6 @@
                 </div>
             </div>
         </div>
-		<div class="q-pa-md">
 			<q-list>
 				<q-item class="post">
 					<q-item-section top thumbnail class="q-ml-none">

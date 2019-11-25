@@ -7,6 +7,15 @@ import {
   } from 'quasar'
 
 
+const LOADER = {
+    spinner: QSpinnerGears,
+    spinnerColor: 'black',
+    spinnerSize: 100,
+    message: 'Some important process is in progress. Hang on...',
+    messageColor: 'black',
+    backgroundColor: 'yellow'
+}
+
 export const LoaderMixin = {
 
     data () {
@@ -15,8 +24,8 @@ export const LoaderMixin = {
     },
     methods: {
 
-        showLoader (options) {
-            Loading.show(options)
+        showLoader () {
+            Loading.show(LOADER)
             setTimeout(() => {
                 Loading.hide()
             }, 3000)
@@ -28,14 +37,7 @@ export const LoaderMixin = {
 
     },
     created () {
-        this.showLoader({
-            spinner: QSpinnerGears,
-            spinnerColor: 'black',
-            spinnerSize: 100,
-            message: 'Some important process is in progress. Hang on...',
-            messageColor: 'black',
-            backgroundColor: 'yellow'
-        })
+        // this.showLoader()
     }
 
 }

@@ -33,24 +33,6 @@
 
 <script>
 
-import {
-  Loading,
-
-  // optional!, for example below
-  // with custom spinner
-  QSpinnerGears,
-  QSpinnerPie,
-  QSpinnerFacebook,
-  QSpinnerHourglass
-} from 'quasar'
-
-function show (options) {
-  Loading.show(options)
-  setTimeout(() => {
-    Loading.hide()
-  }, 3000)
-}
-
 export default {
   name: 'PageIndex',
   data () {
@@ -134,6 +116,11 @@ export default {
         backgroundColor: 'yellow',
       })
     }
+  },
+  created() {
+
+    console.log(localStorage.getItem('user'))
+
   }
 }
 </script>

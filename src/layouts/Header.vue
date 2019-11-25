@@ -41,13 +41,13 @@
           </div>
 
           <q-separator vertical inset class="q-mx-lg" />
+            {{this.$store.state.user}}
 
           <div class="column items-center">
             <q-avatar size="72px">
               <img src="https://cdn.quasar.dev/img/avatar.png">
             </q-avatar>
-
-            <div class="text-subtitle1 q-mt-md q-mb-xs">Vishal Ingole</div>
+            <div class="text-subtitle1 q-mt-md q-mb-xs">{{this.$store.state.login.user.username}}</div>
 
             <q-btn
               color="primary"
@@ -56,6 +56,7 @@
               size="sm"
               v-close-popup
               glossy
+              @click="logout"
             />
           </div>
         </div>
@@ -71,6 +72,11 @@ export default {
     methods: {
         toggleDrawer () {
             this.$store.commit('showcase/updateDrawerState', !this.$store.state.showcase.drawerState)
+        },
+        logout () {
+          this.$store.dispatch("login/logout").then(() => {
+          this.$router.push("/login")
+          });
         }
     },
     data () {

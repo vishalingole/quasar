@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 import showcase from './showcase'
+import login from './login'
 
 // import example from './module-example'
 
@@ -16,7 +17,8 @@ export default function (/* { ssrContext } */) {
   const Store = new Vuex.Store({
     modules: {
       // example
-      showcase
+      showcase,
+      login
     },
 
     // enable strict mode (adds overhead!)
@@ -25,10 +27,10 @@ export default function (/* { ssrContext } */) {
   })
 
   // if (process.env.DEV && module.hot) {
-    module.hot.accept(['./showcase'], () => {
-      const newShowcase = require('./showcase').default
-      Store.hotUpdate({ modules: { showcase: newShowcase } })
-    })
+    // module.hot.accept(['./showcase'], () => {
+    //   const newShowcase = require('./showcase').default
+    //   Store.hotUpdate({ modules: { showcase: newShowcase } })
+    // })
   // }
 
   return Store

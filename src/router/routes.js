@@ -1,21 +1,19 @@
-import Login from '../pages/Login.vue'
-import Register from '../pages/Register.vue'
-import Dashboard from '../pages/Dashboard.vue'
+import Login from "../pages/Login.vue";
+import Register from "../pages/Register.vue";
+import Dashboard from "../pages/Dashboard.vue";
 
 const routes = [
   {
-    path: '/',
-    component: () => import('layouts/MyLayout.vue'),
-    children: [
-      { path: '', component: () => import('pages/Index.vue') }
-    ]
+    path: "/",
+    component: () => import("layouts/MyLayout.vue"),
+    children: [{ path: "", component: () => import("pages/Index.vue") }]
   },
   {
-    path: '/',
-    component: () => import('layouts/MyLayout.vue'),
+    path: "/",
+    component: () => import("layouts/MyLayout.vue"),
     children: [
       {
-        path: 'login',
+        path: "login",
         component: Login,
         meta: {
           allowAnonymous: true
@@ -24,24 +22,24 @@ const routes = [
     ]
   },
   {
-    path: '/',
-    component: () => import('layouts/MyLayout.vue'),
+    path: "/",
+    component: () => import("layouts/MyLayout.vue"),
     children: [
       {
-        path: 'register',
+        path: "register",
         component: Register,
         meta: {
-          allowAnonymous: false
+          allowAnonymous: true
         }
       }
     ]
   },
   {
-    path: '/',
-    component: () => import('layouts/MyLayout.vue'),
+    path: "/",
+    component: () => import("layouts/MyLayout.vue"),
     children: [
       {
-        path: 'dashboard',
+        path: "dashboard",
         component: Dashboard,
         meta: {
           allowAnonymous: false
@@ -49,14 +47,14 @@ const routes = [
       }
     ]
   }
-]
+];
 
 // Always leave this as last one
-if (process.env.MODE !== 'ssr') {
+if (process.env.MODE !== "ssr") {
   routes.push({
-    path: '*',
-    component: () => import('pages/Error404.vue')
-  })
+    path: "*",
+    component: () => import("pages/Error404.vue")
+  });
 }
 
-export default routes
+export default routes;

@@ -1,27 +1,32 @@
 <template>
   <q-page padding>
     <div class="row q-col-gutter-xs mt-2">
-      <div class="col-xl-6 col-lg-3 col-md-3 col-sm-6 col-xs-12 col-3" v-for="(n,index) in results" :key="`xs-${index}`">
+      <div
+        class="col-xl-6 col-lg-3 col-md-3 col-sm-6 col-xs-12 col-3"
+        v-for="(n,index) in results"
+        :key="`xs-${index}`"
+      >
         <div class="my-content">
           <q-card class="my-card">
-      <img :src="n.img">
+            <img :src="n.img">
 
-      <q-card-section>
-        <div class="text-weight-medium">{{$t(n.title)}}</div>
-        <div class="text-weight-thin q-mt-sm q-mb-sm">{{$t(n.name)}}</div>
-        <q-rating
-          size="14px"
-          v-model="n.stars"
-          :max="5"
-          color="red-5"/>
+            <q-card-section>
+              <div class="text-weight-medium">{{$t(n.title)}}</div>
+              <div class="text-weight-thin q-mt-sm q-mb-sm">{{$t(n.name)}}</div>
+              <q-rating
+                size="14px"
+                v-model="n.stars"
+                :max="5"
+                color="red-5"
+              />
 
-          <div class="text-h8 mb-2 text-right"><q-icon name="dollar"/>{{$t(n.price)}}</div>
-      </q-card-section>
-    </q-card>
+              <div class="text-h8 mb-2 text-right">
+                <q-icon name="dollar" />{{$t(n.price)}}</div>
+            </q-card-section>
+          </q-card>
         </div>
       </div>
     </div>
-
 
   </q-page>
 </template>
@@ -88,7 +93,7 @@ export default {
           price: 360
 
         },
-        {title: 'JavaScript - The Complete Guide 2020 (Beginner + Advanced)',
+        {          title: 'JavaScript - The Complete Guide 2020 (Beginner + Advanced)',
           img: 'https://i.udemycdn.com/course/240x135/1188176_a4be_2.jpg',
           name: 'Sachin Tendulkar',
           stars: 4,
@@ -103,7 +108,14 @@ export default {
   methods: {
 
   },
-  created() {
+  created () {
+
+    this.$q.notify({
+      message: 'Welcome to Quasar. Enjoy..!',
+      color: 'green',
+      position: 'top',
+      icon: 'thumb_up',
+    })
   }
 }
 </script>

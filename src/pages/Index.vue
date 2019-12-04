@@ -7,7 +7,10 @@
         :key="`xs-${index}`"
       >
         <div class="my-content">
-          <q-card class="my-card">
+          <q-card
+            class="my-card"
+            @click="$router.push({ name: 'dashboard' })"
+          >
             <img :src="n.img">
 
             <q-card-section>
@@ -33,10 +36,15 @@
 
 <script>
 
+import { CategoryMixin } from '../mixins/CategoryMixin'
+
 export default {
   name: 'PageIndex',
+  mixins: [CategoryMixin],
   data () {
     return {
+      categoryList: [],
+      category: '',
       results: [
         {
           title: 'JavaScript - The Complete Guide 2020 (Beginner + Advanced)',
@@ -109,7 +117,13 @@ export default {
 
   },
   created () {
-
+        console.log(this.$router)
+    this.getCategory().then((result) => {
+            this.categoryList = result.data   
+            this.categoryOptions = result.data
+        }).catch((err) => {
+            
+        });
     this.$q.notify({
       message: 'Welcome to Quasar. Enjoy..!',
       color: 'green',

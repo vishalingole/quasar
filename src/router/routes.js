@@ -1,6 +1,7 @@
 import Login from "../pages/Login.vue";
 import Register from "../pages/Register.vue";
 import Dashboard from "../pages/Dashboard.vue";
+import Detail from "../pages/Detail.vue";
 
 const routes = [
   {
@@ -40,7 +41,22 @@ const routes = [
     children: [
       {
         path: "dashboard",
+        name: "dashboard",
         component: Dashboard,
+        meta: {
+          allowAnonymous: false
+        }
+      }
+    ]
+  },
+  {
+    path: "/",
+    component: () => import("layouts/MyLayout.vue"),
+    children: [
+      {
+        path: "detail",
+        name: "detail",
+        component: Detail,
         meta: {
           allowAnonymous: false
         }

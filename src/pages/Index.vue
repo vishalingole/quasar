@@ -3,8 +3,8 @@
     <div class="row q-col-gutter-xs mt-2">
       <div class="col-xl-6 col-lg-3 col-md-3 col-sm-6 col-xs-12 col-3" v-for="(n,index) in results" :key="`xs-${index}`">
         <div class="my-content">
-          <q-card class="my-card">
-      <img :src="n.img">
+          <q-card class="my-card" @click="$router.push({ name: 'dashboard' })">
+          <img :src="n.img">
 
       <q-card-section>
         <div class="text-weight-medium">{{$t(n.title)}}</div>
@@ -17,9 +17,29 @@
 
           <div class="text-h8 mb-2 text-right"><q-icon name="dollar"/>{{$t(n.price)}}</div>
       </q-card-section>
-    </q-card>
+      </q-card>
         </div>
       </div>
+
+      <!-- <div class="col-xl-6 col-lg-3 col-md-3 col-sm-6 col-xs-12 col-3" v-for="(n,index) in categoryList" :key="`xs-${index}`">
+        <div class="my-content">
+          <q-card class="my-card"  @click="this.$router.push({ name: 'Home' })">
+          <img :src="n.image" height="150px"> 
+
+      <q-card-section>
+        <div class="text-weight-medium">{{$t(n.title)}}</div>
+        <div class="text-weight-thin q-mt-sm q-mb-sm">{{$t(n.name)}}</div>
+        <q-rating
+          size="14px"
+          v-model="n.stars"
+          :max="5"
+          color="red-5"/>
+
+          <div class="text-h8 mb-2 text-right"><q-icon name="dollar"/>{{$t(n.price)}}</div>
+      </q-card-section>
+      </q-card>
+        </div>
+      </div> -->
     </div>
 
 
@@ -28,10 +48,15 @@
 
 <script>
 
+import { CategoryMixin } from '../mixins/CategoryMixin'
+
 export default {
   name: 'PageIndex',
+  mixins: [CategoryMixin],
   data () {
     return {
+      categoryList: [],
+      category: '',
       results: [
         {
           title: 'JavaScript - The Complete Guide 2020 (Beginner + Advanced)',
@@ -104,6 +129,13 @@ export default {
 
   },
   created() {
+    console.log(this.$router)
+    this.getCategory().then((result) => {
+            this.categoryList = result.data   
+            this.categoryOptions = result.data
+        }).catch((err) => {
+            
+        });
   }
 }
 </script>

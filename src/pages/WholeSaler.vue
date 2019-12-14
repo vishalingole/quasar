@@ -1,9 +1,6 @@
 <template>
-  <q-page
-    padding
-    class="bg-grey-2"
-  >
-    <div class="row q-col-gutter-xs mt-2 ">
+  <q-page padding>
+    <div class="row q-col-gutter-xs mt-2">
       <div
         class="col-xl-6 col-lg-3 col-md-3 col-sm-6 col-xs-12 col-3"
         v-for="(n,index) in results"
@@ -14,20 +11,40 @@
             class="my-card"
             @click="$router.push({ name: 'dashboard' })"
           >
-            <img :src="n.img">
+            <img
+              :src="n.img"
+              style="max-height: 120px"
+            >
 
             <q-card-section>
               <div class="text-weight-medium">{{$t(n.title)}}</div>
-              <div class="text-weight-thin q-mt-sm q-mb-sm">{{$t(n.name)}}</div>
-              <q-rating
-                size="14px"
-                v-model="n.stars"
-                :max="5"
-                color="red-5"
-              />
+              <div class="row mb-2 mt-2">
+                <div class="text-weight-thin q-mt-sm q-mb-sm col-6">{{$t(n.name)}}</div>
+                <div class="col-6 q-mt-sm q-mb-sm text-right">
+                  <q-rating
+                    size="14px"
+                    v-model="n.stars"
+                    :max="5"
+                    color="red-5"
+                  />
+                </div>
+              </div>
 
-              <div class="text-h8 mb-2 text-right">
-                <q-icon name="dollar" />{{$t(n.price)}}</div>
+              <div class="row q-mt-sm">
+                <div class="text-left col-6">
+                  <q-icon
+                    name="phone_in_talk"
+                    class="q-mr-5"
+                    color="grey"
+                  /> 9665988376
+                </div>
+                <div class="text-right col-6">
+                  <q-icon
+                    name="place"
+                    color="grey"
+                  /> pune
+                </div>
+              </div>
             </q-card-section>
           </q-card>
         </div>
@@ -50,16 +67,16 @@ export default {
       category: '',
       results: [
         {
-          title: 'JavaScript - The Complete Guide 2020 (Beginner + Advanced)',
-          img: 'https://i.udemycdn.com/course/240x135/2508942_11d3.jpg',
+          title: 'Jai Bajrand Tradeing company fdsddr sdfsdhe',
+          img: 'https://cdn.quasar.dev/img/avatar6.jpg',
           name: 'Rohit Khatri',
           stars: 5,
-          price: '$360'
+          price: '54'
         },
         {
-          title: 'JavaScript - The Complete Guide 2020 (Beginner + Advanced)',
+          title: 'JavaScript - The Complete  (Beginner + Advanced)',
           img: 'https://i.udemycdn.com/course/240x135/1436332_1fc3_5.jpg',
-          name: 'Maximilian Schwarzmüller',
+          name: 'Maximilian',
           stars: 4,
           price: 360
 
@@ -140,7 +157,10 @@ export default {
 <style lang="sass" scoped>
 .my-content
   margin: 4px
+  border: 1px solid #ccc
 .my-content:hover
+  border: 1px solid teal
+  box-shadow: 2px 2px #ddd
 .my-card
   cursor: pointer
 .postBtn > div

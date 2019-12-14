@@ -78,24 +78,23 @@
                 outlined
                 square
                 v-model="model"
-                use-input
-                hide-selected
-                fill-input
-                input-debounce="0"
                 :options="options"
-                @filter="filterFn"
                 label="Location"
+                color="green-4"
+                clearable
+                options-selected-class="text-deep-orange"
               >
-                <template v-slot:prepend>
-                  <q-icon
-                    name="place"
-                    color="green-2"
-                  />
-                </template>
-                <template v-slot:no-option>
-                  <q-item>
-                    <q-item-section class="text-grey">
-                      No results
+                <template v-slot:option="scope">
+                  <q-item
+                    v-bind="scope.itemProps"
+                    v-on="scope.itemEvents"
+                  >
+                    <q-item-section avatar>
+                      <q-icon :name="scope.opt.icon" />
+                    </q-item-section>
+                    <q-item-section>
+                      <q-item-label v-html="scope.opt.label" />
+                      <q-item-label caption>{{ scope.opt.description }}</q-item-label>
                     </q-item-section>
                   </q-item>
                 </template>
@@ -117,36 +116,35 @@
       <q-list>
         <q-item class="post">
           <q-item-section
-            top
+            center
             thumbnail
             class="q-ml-none"
           >
             <img src="https://cdn.quasar.dev/img/mountains.jpg">
           </q-item-section>
           <q-item-section>
-            <q-item-label>{{$t('Single line item')}}</q-item-label>
+            <q-item-label>{{$t('Onion with very good condition')}}</q-item-label>
             <q-item-label
               caption
               lines="2"
             >Secondary line text. Lorem ipsum dolor sit amet, consectetur adipiscit elit.</q-item-label>
           </q-item-section>
-          <q-item-section
-            side
-            top
-          >
-            <q-item-label
-              caption
-              class="text-black"
-            >5 min ago</q-item-label>
-            <q-icon
-              name="star"
-              color="yellow"
-            />
-            <q-btn
-              size="sm"
-              outline
-              @click="$router.push({ name: 'detail'})"
-            >View</q-btn>
+          <q-item-section side>
+            <q-item-label caption><b>Neha Bobde</b></q-item-label>
+            <q-item-label class="text-orange">Rs: 60/Kg</q-item-label>
+            <q-item-label caption>2 mssin ago</q-item-label>
+            <q-item-label caption>
+              <q-icon name="place"></q-icon> Pune
+            </q-item-label>
+            <q-item-label style="margin-top:10px">
+              <q-btn
+                outline
+                color="green"
+                size="sm"
+                @click="$router.push({ name: 'detail'})"
+              >View</q-btn>
+            </q-item-label>
+
           </q-item-section>
         </q-item>
         <!-- <q-separator spaced inset /> -->
@@ -268,7 +266,40 @@ export default {
       category: '',
       item: '',
       itemList: [],
-      itemOptions: []
+      itemOptions: [],
+      options: [
+        {
+          label: 'Google',
+          value: 'Google',
+          description: 'Search engine',
+          icon: 'mail'
+        },
+        {
+          label: 'Facebook',
+          value: 'Facebook',
+          description: 'Social media',
+          icon: 'bluetooth'
+        },
+        {
+          label: 'Twitter',
+          value: 'Twitter',
+          description: 'Quick updates',
+          icon: 'map'
+        },
+        {
+          label: 'Apple',
+          value: 'Apple',
+          description: 'iStuff',
+          icon: 'golf_course'
+        },
+        {
+          label: 'Oracle',
+          value: 'Oracle',
+          disable: true,
+          description: 'Databases',
+          icon: 'casino'
+        }
+      ]
     }
   },
 

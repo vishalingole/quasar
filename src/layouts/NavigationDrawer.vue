@@ -3,7 +3,7 @@
     v-model="drawerState"
     show-if-above
     bordered
-    content-class="inset-shadow"
+    content-class="inset-shadow bg-green-9 text-white"
   >
     <q-list>
       <q-item-label header>Essential Links</q-item-label>
@@ -16,7 +16,7 @@
         <q-item-section avatar>
           <q-icon
             :name="item.logo"
-            color="teal-5"
+            color="white"
           />
         </q-item-section>
         <q-item-section>
@@ -65,13 +65,13 @@ export default {
           description: 'chat.quasar.dev'
         },
         {
-          link: '',
+          link: 'retailer',
           title: 'Retailer',
           logo: 'record_voice_over',
           description: 'forum.quasar.dev'
         },
         {
-          link: '',
+          link: 'whole-saler',
           title: 'Wholesaler',
           logo: 'rss_feed',
           description: '@quasarfreamework'

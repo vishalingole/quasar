@@ -3,7 +3,7 @@
     elevated
     v-if="!$route.meta.allowAnonymous"
   >
-    <q-toolbar class="bg-green-5 glossy">
+    <q-toolbar class="bg-white text-black">
       <q-btn
         flat
         dense
@@ -104,12 +104,16 @@ export default {
           value: 'en-us'
         },
         {
-          label: 'Hindi',
+          label: 'हिन्दी',
           value: 'hn'
         },
         {
-          label: 'Marathi',
+          label: 'मराठी',
           value: 'mr'
+        },
+        {
+          label: 'ਪੰਜਾਬੀ',
+          value: 'pu'
         }
       ],
       lang: this.$i18n.locale,

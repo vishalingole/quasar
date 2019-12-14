@@ -2,6 +2,9 @@ import Login from "../pages/Login.vue";
 import Register from "../pages/Register.vue";
 import Dashboard from "../pages/Dashboard.vue";
 import Detail from "../pages/Detail.vue";
+import CreateAd from "../pages/CreateAd.vue";
+import WholeSaler from "../pages/WholeSaler.vue";
+import Retailer from "../pages/Retailer.vue";
 
 const routes = [
   {
@@ -57,6 +60,48 @@ const routes = [
         path: "detail",
         name: "detail",
         component: Detail,
+        meta: {
+          allowAnonymous: false
+        }
+      }
+    ]
+  },
+  {
+    path: "/",
+    component: () => import("layouts/MyLayout.vue"),
+    children: [
+      {
+        path: "create-ad",
+        name: "create-ad",
+        component: CreateAd,
+        meta: {
+          allowAnonymous: false
+        }
+      }
+    ]
+  },
+  {
+    path: "/",
+    component: () => import("layouts/MyLayout.vue"),
+    children: [
+      {
+        path: "whole-saler",
+        name: "whole-saler",
+        component: WholeSaler,
+        meta: {
+          allowAnonymous: false
+        }
+      }
+    ]
+  },
+  {
+    path: "/",
+    component: () => import("layouts/MyLayout.vue"),
+    children: [
+      {
+        path: "retailer",
+        name: "retailer",
+        component: Retailer,
         meta: {
           allowAnonymous: false
         }

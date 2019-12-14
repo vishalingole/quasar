@@ -1,9 +1,17 @@
 <template>
-  <q-page
-    padding
-    class="bg-grey-2"
-  >
-    <div class="row q-col-gutter-xs mt-2 ">
+  <q-page padding>
+    <!-- <div class="postBtn">
+      <div class="row justify-end">
+        <q-btn
+          color="green-5"
+          glossy
+          @click="$router.push('/create-ad')"
+          label="Post Free Ad"
+          outline
+        />
+      </div>
+    </div> -->
+    <div class="row q-col-gutter-xs mt-2">
       <div
         class="col-xl-6 col-lg-3 col-md-3 col-sm-6 col-xs-12 col-3"
         v-for="(n,index) in results"
@@ -50,7 +58,7 @@ export default {
       category: '',
       results: [
         {
-          title: 'JavaScript - The Complete Guide 2020 (Beginner + Advanced)',
+          title: 'Jai Bajrand Tradeing company',
           img: 'https://i.udemycdn.com/course/240x135/2508942_11d3.jpg',
           name: 'Rohit Khatri',
           stars: 5,
@@ -140,7 +148,10 @@ export default {
 <style lang="sass" scoped>
 .my-content
   margin: 4px
+  border: 1px solid #ccc
 .my-content:hover
+  border: 1px solid teal
+  box-shadow: 2px 2px #ddd
 .my-card
   cursor: pointer
 .postBtn > div

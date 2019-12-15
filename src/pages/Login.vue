@@ -25,7 +25,7 @@
           />
           <h4 class="text-h5 text-center">{{ $t("Welcome To Shetkari") }}</h4>
           <q-form class="q-gutter-md login">
-            <q-input
+            <!-- <q-input
               square
               clearable
               v-model="email"
@@ -39,6 +39,15 @@
               v-model="password"
               type="password"
               :label="$t('Password')"
+              outlined
+            /> -->
+
+            <q-input
+              square
+              clearable
+              v-model="email"
+              type="email"
+              :label="$t('Mobile')"
               outlined
             />
           </q-form>
@@ -110,6 +119,7 @@ export default {
     return {
       email: "",
       password: "",
+      mobile: null,
       langs: [
         {
           label: 'German',

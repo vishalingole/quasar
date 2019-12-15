@@ -59,7 +59,7 @@
 import { CategoryMixin } from '../mixins/CategoryMixin'
 
 export default {
-  name: 'PageIndex',
+  name: 'WholeSaler',
   mixins: [CategoryMixin],
   data () {
     return {
@@ -67,7 +67,7 @@ export default {
       category: '',
       results: [
         {
-          title: 'Jai Bajrand Tradeing company fdsddr sdfsdhe',
+          title: 'JavaScript - The Complete Guide 2020 (Beginner + Advanced)',
           img: 'https://cdn.quasar.dev/img/avatar6.jpg',
           name: 'Rohit Khatri',
           stars: 5,

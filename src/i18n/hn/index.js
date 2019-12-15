@@ -17,5 +17,8 @@ export default {
   "Daniel jack": "डैनियल जैक",
   "Ashish Sarode": "आशीष सरोदे",
   "Rohit Khatri": "रोहित खत्री",
-  Register: "रजिस्टर"
+  Register: "रजिस्टर",
+  Onion: "प्याज",
+  onion: "प्याज",
+  "with very good quality": "बहुत अच्छी गुणवत्ता के साथ "
 };

@@ -5,6 +5,7 @@ import Detail from "../pages/Detail.vue";
 import CreateAd from "../pages/CreateAd.vue";
 import WholeSaler from "../pages/WholeSaler.vue";
 import Retailer from "../pages/Retailer.vue";
+import MyPost from "../pages/MyPost.vue";
 
 const routes = [
   {
@@ -102,6 +103,20 @@ const routes = [
         path: "retailer",
         name: "retailer",
         component: Retailer,
+        meta: {
+          allowAnonymous: false
+        }
+      }
+    ]
+  },
+  {
+    path: "/",
+    component: () => import("layouts/MyLayout.vue"),
+    children: [
+      {
+        path: "mypost",
+        name: "mypost",
+        component: MyPost,
         meta: {
           allowAnonymous: false
         }

@@ -3,7 +3,7 @@
     elevated
     v-if="!$route.meta.allowAnonymous"
   >
-    <q-toolbar class="bg-white text-black">
+    <q-toolbar class="bg-green-9 text-black glossy">
       <q-btn
         flat
         dense
@@ -12,9 +12,9 @@
         aria-label="Menu"
         @click="toggleDrawer"
       />
-      <q-avatar>
+      <!-- <q-avatar>
         <img src="https://cdn.quasar.dev/logo/svg/quasar-logo.svg">
-      </q-avatar>
+      </q-avatar> -->
 
       <q-toolbar-title>
         Shetkari

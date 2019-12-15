@@ -36,29 +36,6 @@
               outlined
               square
             />
-            <q-input
-              square
-              clearable
-              v-model="email"
-              type="email"
-              :label="$t('Email')"
-              outlined
-            />
-            <q-input
-              v-model="password"
-              :type="isPwd ? 'password' : 'text'"
-              :label="$t('Password')"
-              outlined
-              square
-            >
-              <template v-slot:append>
-                <q-icon
-                  :name="isPwd ? 'visibility_off' : 'visibility'"
-                  class="cursor-pointer"
-                  @click="isPwd = !isPwd"
-                />
-              </template>
-            </q-input>
             <q-select
               v-model="type"
               outlined
@@ -71,6 +48,34 @@
               label="Mobile"
               outlined
               square
+            />
+            <q-select
+              v-model="type"
+              outlined
+              square
+              :label="$t('State')"
+              :options="registrationType"
+            />
+            <q-select
+              v-model="type"
+              outlined
+              square
+              :label="$t('District')"
+              :options="registrationType"
+            />
+            <q-select
+              v-model="type"
+              outlined
+              square
+              :label="$t('Taluka')"
+              :options="registrationType"
+            />
+            <q-select
+              v-model="type"
+              outlined
+              square
+              :label="$t('Village')"
+              :options="registrationType"
             />
           </q-form>
         </q-card-section>

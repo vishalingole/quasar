@@ -3,7 +3,7 @@
     v-model="drawerState"
     show-if-above
     bordered
-    content-class="inset-shadow bg-green-9 text-white"
+    content-class="inset-shadow bg-white-7 text-green-9"
   >
     <q-list>
       <q-item-label header>Essential Links</q-item-label>
@@ -16,7 +16,7 @@
         <q-item-section avatar>
           <q-icon
             :name="item.logo"
-            color="white"
+            color="green-9"
           />
         </q-item-section>
         <q-item-section>
@@ -53,15 +53,15 @@ export default {
           description: 'quasar.dev'
         },
         {
-          link: '',
+          link: 'search',
           title: 'Search',
           logo: 'search',
           description: 'github.com/quasarframework'
         },
         {
-          link: '',
+          link: 'mypost',
           title: 'My Post',
-          logo: 'chat',
+          logo: 'list',
           description: 'chat.quasar.dev'
         },
         {
@@ -77,25 +77,25 @@ export default {
           description: '@quasarfreamework'
         },
         {
-          link: '',
+          link: 'about',
           title: 'About',
           logo: 'public',
           description: '@quasarfreamework'
         },
         {
-          link: '',
+          link: 'contact-us',
           title: 'Contact Us',
           logo: 'dashboard',
           description: '@quasarfreamework'
         },
         {
-          link: '',
+          link: 'privacy',
           title: 'Privacy',
           logo: 'lock',
           description: '@quasarfreamework'
         },
         {
-          link: '',
+          link: 'terms',
           title: 'Terms',
           logo: 'mdi-alert-circle-outline',
           description: '@quasarfreamework'

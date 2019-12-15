@@ -1,16 +1,5 @@
 <template>
   <q-page padding>
-    <!-- <div class="postBtn">
-      <div class="row justify-end">
-        <q-btn
-          color="green-5"
-          glossy
-          @click="$router.push('/create-ad')"
-          label="Post Free Ad"
-          outline
-        />
-      </div>
-    </div> -->
     <div class="row q-col-gutter-xs mt-2">
       <div
         class="col-xl-6 col-lg-3 col-md-3 col-sm-6 col-xs-12 col-3"
@@ -159,6 +148,4 @@ export default {
    position: relative
    align: right
    font-family: normal
-
-
 </style>

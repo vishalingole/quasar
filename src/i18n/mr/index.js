@@ -19,5 +19,8 @@ export default {
   "Single line item": "सिंगल लाइन आइटम",
   "Ashish Sarode": "आशिष सरोदे",
   "Rohit Khatri": "रोहित खत्री",
-  Register: "नोंदणी करा"
+  Register: "नोंदणी करा",
+  Onion: "कांदा",
+  onion: "कांदा",
+  "with very good quality": "अतिशय दर्जेदार"
 };
